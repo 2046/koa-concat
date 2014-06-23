@@ -1,0 +1,20 @@
+{
+  "name": "koa-combo",
+  "version": "0.0.1",
+  "description": "静态文件请求合并",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/2046/koa-combo.git"
+  },
+  "keywords": [
+    "koa",
+    "combo"
+  ],
+  "author": "Hanfeizi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/2046/koa-combo/issues"
+  },
+  "homepage": "https://github.com/2046/koa-combo"
+}
