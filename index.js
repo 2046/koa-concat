@@ -12,13 +12,20 @@ validate = require('./lib/validate');
 
 module.exports = combo;
 
-function combo(root){
+function combo(root, identifier){
 
   return function *(next){
-    var urlInfo = null;
+    var urlInfo, extname, index;
 
-    if(this.idempotent && ['.css', '.js'].indexOf(path.extname(this.url)) !== -1){
-      urlInfo = yield parseUrl(root || '');
+    extname = path.extname(decodeURIComponent(this.url));
+    index = extname.lastIndexOf('?');
+
+    if(index !== -1){
+      extname = extname.substring(0, index);
+    }
+
+    if(this.idempotent && ['.css', '.js'].indexOf(extname) !== -1){
+      urlInfo = yield parseUrl(root || '', identifier || '??');
       yield validate(urlInfo.pathnames);
       yield send(urlInfo.pathnames, urlInfo.mime);
     }else{

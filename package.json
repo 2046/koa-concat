@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "静态文件请求合并",
   "main": "index.js",
+  "scripts": {
+    "test": "mocha --harmony --reporter spec"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/2046/koa-combo.git"
@@ -17,7 +20,9 @@
     "url": "https://github.com/2046/koa-combo/issues"
   },
   "homepage": "https://github.com/2046/koa-combo",
-  "devDependencies" : {
-    "koa": "~0.8.0"
+  "devDependencies": {
+    "koa": "~0.8.0",
+    "mocha": "~1.19.0",
+    "supertest": "~0.13.0"
   }
 }
