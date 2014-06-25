@@ -23,6 +23,7 @@
   "devDependencies": {
     "koa": "~0.8.0",
     "mocha": "~1.19.0",
-    "supertest": "~0.13.0"
+    "supertest": "~0.13.0",
+    "koa-static": "~1.4.5"
   }
 }
