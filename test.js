@@ -100,10 +100,24 @@ describe('Koa Combo', function(){
 
   it('要合并的文件没有', function(done){
     request(app.listen())
-      .get('/assets/??a.css,b.css,c.css?t=1')
+      .get('/assets/??a.css,b.css,c.css,e.css,f.css?t=1')
       .expect('Content-Length', 42)
       .expect('Content-Type', /css/)
       .expect(200)
+      .end(function(err, res){
+        if(err){
+          return done(err);
+        }else{
+          done();
+        }
+      });
+  });
+
+  it('要合并的文件全部没有', function(done){
+    request(app.listen())
+      .get('/assets/??e.css,c.css,d.css?t=1')
+      .expect('Content-Type', /text/)
+      .expect(404)
       .end(function(err, res){
         if(err){
           return done(err);
