@@ -3,7 +3,7 @@ Koa-combo
 
 ## 描述
 
-用来合并js和css请求的Koajs中间件，类似[nginx-http-concat](https://github.com/alibaba/nginx-http-concat)功能。
+用来合并js和css请求的[Koajs](http://koajs.com/)中间件，类似[nginx-http-concat](https://github.com/alibaba/nginx-http-concat)功能。
 
 ## 使用
 
