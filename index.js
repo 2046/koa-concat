@@ -14,8 +14,10 @@ module.exports = combo;
 
 function combo(root, identifier){
 
-  return function *(next){
+  return function *combo(next){
     var urlInfo, extname, index;
+
+    yield* next;
 
     extname = path.extname(decodeURIComponent(this.url));
     index = extname.lastIndexOf('?');
@@ -28,8 +30,6 @@ function combo(root, identifier){
       urlInfo = yield parseUrl(root || '', identifier || '??');
       yield validate(urlInfo.pathnames);
       yield send(urlInfo.pathnames, urlInfo.mime);
-    }else{
-      yield next;
     }
   };
 };
