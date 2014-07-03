@@ -1,7 +1,7 @@
 {
   "name": "koa-combo",
   "version": "0.0.1",
-  "description": "静态文件请求合并",
+  "description": "用来合并js和css请求的Koajs中间件",
   "main": "index.js",
   "scripts": {
     "test": "mocha --harmony --reporter spec"
