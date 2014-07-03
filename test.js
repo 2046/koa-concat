@@ -71,7 +71,6 @@ describe('Koa Combo', function(){
   it('大文件', function(done){
     request(app.listen())
       .get('/assets/??jquery-1.11.1.js,jquery-1.11.1.js,jquery-1.11.1.js,jquery-1.11.1.js,jquery-1.11.1.js,jquery-1.11.1.js,jquery-1.11.1.js,jquery-1.11.1.js,jquery-1.11.1.js,jquery-1.11.1.js?t=1')
-      .expect('Content-Length', 2827660)
       .expect('Content-Type', /javascript/)
       .expect(200)
       .end(function(err, res){
@@ -86,7 +85,6 @@ describe('Koa Combo', function(){
   it('中文路径', function(done){
     request(app.listen())
       .get('/assets/??jquery-1.11.1.js,中文目录/a.js?t=1')
-      .expect('Content-Length', 282820)
       .expect('Content-Type', /javascript/)
       .expect(200)
       .end(function(err, res){
