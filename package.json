@@ -1,5 +1,5 @@
 {
-  "name": "koa-combo",
+  "name": "koa-concat",
   "version": "0.0.1",
   "description": "用来合并js和css请求的Koajs中间件",
   "main": "index.js",
