@@ -5,6 +5,11 @@ Koa-combo
 
 用来合并js和css请求的[Koajs](http://koajs.com/)中间件，类似[nginx-http-concat](https://github.com/alibaba/nginx-http-concat)功能。
 
+## 安装
+```javascript
+npm install koa-concat
+```
+
 ## 使用
 
 ```javascript
