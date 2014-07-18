@@ -1,4 +1,4 @@
-Koa-combo
+Koa-concat
 =========
 
 ## 描述
@@ -14,7 +14,7 @@ npm install koa-concat
 
 ```javascript
 var koa = require('koa');
-var combo = require('koa-combo');
+var combo = require('koa-concat');
 var app = koa();
 
 app.use(combo('.', '&&'));
