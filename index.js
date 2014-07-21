@@ -14,10 +14,11 @@ module.exports = combo;
 
 function combo(root, identifier){
 
+  root = root || '';
+  identifier = identifier || '??';
+
   return function *combo(next){
     var urlInfo, extname, index;
-
-    yield* next;
 
     extname = path.extname(decodeURIComponent(this.url));
     index = extname.lastIndexOf('?');
@@ -26,10 +27,12 @@ function combo(root, identifier){
       extname = extname.substring(0, index);
     }
 
-    if(this.idempotent && ['.css', '.js'].indexOf(extname) !== -1){
-      urlInfo = yield parseUrl(root || '', identifier || '??');
+    if(this.idempotent && ['.css', '.js'].indexOf(extname) !== -1 && this.url.indexOf(identifier) !== -1){
+      urlInfo = yield parseUrl(root, identifier);
       yield validate(urlInfo.pathnames);
       yield send(urlInfo.pathnames, urlInfo.mime);
+    }else{
+      yield* next;
     }
   };
 };
