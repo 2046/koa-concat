@@ -1,6 +1,6 @@
 {
   "name": "koa-concat",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "用来合并js和css请求的Koajs中间件",
   "main": "index.js",
   "scripts": {
